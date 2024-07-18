@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR</title>
+</head>
+<body>
+  <style href = "style.css">
+    .vr-section { background-color: #100425; display: flex; padding-bottom: 64px; flex-direction: column; }
+.vr-container { display: flex; width: 100%; padding-left: 23px; flex-direction: column; align-items: center; }
+.vr-content { align-self: stretch; }
+.vr-row { gap: 20px; display: flex; }
+.vr-column { display: flex; flex-direction: column; line-height: normal; width: 65%; margin-left: 0; }
+.vr-hero { border-radius: 25px 25px 0 0; box-shadow: 75.833px -75.833px 75.833px 0 rgba(165, 165, 165, 0.1) inset, -75.833px 75.833px 75.833px 0 rgba(255, 255, 255, 0.1) inset; backdrop-filter: blur(75.83333587646484px); border: 1px solid rgba(248, 248, 248, 0.26); background-color: rgba(217, 217, 217, 0.1); z-index: 10; display: flex; margin-top: 27px; flex-grow: 1; padding-bottom: 80px; flex-direction: column; width: 100%; }
+.vr-nav { display: flex; align-items: start; gap: 20px; font-size: 18px; color: #fff; font-weight: 500; white-space: nowrap; }
+.vr-logo { aspect-ratio: 1.11; object-fit: auto; object-position: center; width: 170px; align-self: stretch; max-width: 100%; }
+.nav-item { font-family: Inter, sans-serif; margin-top: 26px; }
+.vr-divider { aspect-ratio: 5.26; object-fit: auto; object-position: center; width: 202px; fill: #100425; box-shadow: 0 -1px 1px 0 rgba(255, 255, 255, 0.44) inset; max-width: 100%; }
+.hero-content { display: flex; width: 850px; max-width: 100%; flex-direction: column; font-size: 24px; font-weight: 600; margin: 107px 0 0 142px; }
+.hero-title { color: #fff; font: 700 101px Inter, sans-serif; }
+.hero-subtitle { background: linear-gradient(92deg, #2aa9d7 -9.66%, #b21cac 59.13%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 25px; font: 55px Inter, sans-serif; }
+.hero-description { color: #fff; font-family: Inter, sans-serif; font-weight: 300; margin-top: 40px; }
+.cta-button { font-family: Inter, sans-serif; justify-content: center; border-radius: 40px; background-color: #a970bd; align-self: start; margin-top: 52px; color: #fff; padding: 15px 18px; }
+.vr-image-column { display: flex; flex-direction: column; line-height: normal; width: 35%; margin-left: 20px; }
+.vr-image { aspect-ratio: 0.85; object-fit: auto; object-position: center; width: 100%; }
+.product-section { margin-top: 201px; width: 100%; max-width: 1075px; }
+.product-row { gap: 20px; display: flex; }
+.product-column { display: flex; flex-direction: column; line-height: normal; width: 33%; margin-left: 0; }
+.product-card { display: flex; flex-grow: 1; padding-bottom: 8px; flex-direction: column; font-size: 32px; color: #fff; font-weight: 600; }
+.product-image { aspect-ratio: 0.88; object-fit: auto; object-position: center; width: 100%; }
+.product-title { font-family: Inter, sans-serif; align-self: center; margin-top: 50px; }
+.feature-section { margin-top: 321px; width: 100%; max-width: 1280px; }
+.feature-row { gap: 20px; display: flex; }
+.feature-column { display: flex; flex-direction: column; line-height: normal; width: 50%; margin-left: 0; }
+.feature-content { flex-grow: 1; }
+.feature-images { gap: 20px; display: flex; }
+.feature-image-large { aspect-ratio: 1; object-fit: auto; object-position: center; width: 100%; align-self: stretch; margin: auto 0; }
+.feature-image-small { display: flex; flex-grow: 1; flex-direction: column; align-items: center; }
+.feature-image { aspect-ratio: 0.94; object-fit: auto; object-position: center; width: 213px; }
+.feature-text { display: flex; margin-top: 25px; flex-direction: column; font-size: 24px; color: #fff; font-weight: 600; }
+.feature-title { background: linear-gradient(92deg, #2aa9d7 -9.66%, #b21cac 59.13%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font: 64px/62px Inter, sans-serif; }
+.feature-description { font-family: Inter, sans-serif; font-weight: 300; margin-top: 45px; }
+.feature-cta { display: flex; margin-top: 67px; width: 232px; max-width: 100%; gap: 20px; justify-content: space-between; }
+.cta-text { font-family: Inter, sans-serif; justify-content: center; border-radius: 40px; background-color: #a970bd; padding: 15px 18px; }
+.cta-icon { aspect-ratio: 1; object-fit: auto; object-position: center; width: 41px; margin: auto 0; }
+.touch-reality-section { margin-top: 323px; width: 100%; max-width: 1216px; }
+.touch-reality-row { gap: 20px; display: flex; }
+.touch-reality-column { display: flex; flex-direction: column; line-height: normal; width: 61%; margin-left: 0; }
+.touch-reality-content { display: flex; margin-top: 102px; flex-grow: 1; flex-direction: column; color: #fff; }
+.touch-reality-title { background: linear-gradient(92deg, #2aa9d7 -9.66%, #b21cac 59.13%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font: 600 55px/97% Inter, sans-serif; }
+.touch-reality-text { display: flex; margin-top: 37px; flex-direction: column; font-size: 24px; }
+.touch-reality-description { font-family: Inter, sans-serif; font-weight: 300; }
+.touch-reality-cta { font-family: Inter, sans-serif; justify-content: center; border-radius: 40px; background-color: #a970bd; align-self: start; margin-top: 70px; font-weight: 600; padding: 15px 18px; }
+.touch-reality-image-column { display: flex; flex-direction: column; line-height: normal; width: 39%; margin-left: 20px; }
+.touch-reality-image { aspect-ratio: 1; object-fit: auto; object-position: center; width: 100%; }
+.newsletter-section { border-radius: 35px; border: 5px solid #dc00d3; display: flex; margin-top: 252px; width: 100%; max-width: 984px; align-items: center; color: #fff; font-weight: 600; justify-content: center; padding: 72px 60px; }
+.newsletter-content { display: flex; margin-bottom: 9px; width: 638px; max-width: 100%; flex-direction: column; }
+.newsletter-title { text-transform: uppercase; margin: 0 53px; font: 32px Inter, sans-serif; }
+.newsletter-description { text-align: center; margin-top: 28px; font: 300 24px Inria Sans, sans-serif; }
+.newsletter-form { border-radius: 35px; border: 5px solid #a970bd; align-self: center; display: flex; margin-top: 40px; width: 561px; max-width: 100%; flex-direction: column; align-items: end; font-size: 20px; white-space: nowrap; text-align: center; justify-content: center; padding: 0 60px; }
+.newsletter-submit { font-family: Inter, sans-serif; border-radius: 0 35px 35px 0; border: 5px solid #a970bd; background-color: #a970bd; justify-content: center; padding: 21px 36px; }
+.footer-nav { display: flex; width: 860px; max-width: 100%; gap: 20px; font-size: 24px; color: #fff; font-weight: 600; text-align: center; margin: 200px 0 0 12px; }
+.footer-nav-item { font-family: Inter, sans-serif; }
+.footer-nav-item-grow { font-family: Inter, sans-serif; flex-grow: 1; flex-basis: auto; }
+.app-download-title { color: #fff; text-align: center; margin: 82px 0 0 12px; font: 700 32px Inter, sans-serif; }
+.app-download-description { color: #fff; text-align: center; margin: 21px 0 0 12px; font: 300 16px Inria Sans, sans-serif; }
+.app-download-buttons { justify-content: center; display: flex; gap: 20px; margin: 46px 0 0 12px; }
+.app-store-button { aspect-ratio: 4.35; object-fit: auto; object-position: center; width: 203px; max-width: 100%; }
+.play-store-button { aspect-ratio: 5; object-fit: auto; object-position: center; width: 203px; max-width: 100%; margin: auto 0; }
+.footer-section { display: flex; margin-top: 58px; width: 100%; flex-direction: column; padding: 0 60px; }
+.footer-divider { border: 1px solid #fff; background-color: #fff; height: 1px; }
+.footer-content { display: flex; margin-top: 18px; width: 100%; align-items: start; gap: 20px; }
+.footer-links { display: flex; gap: 20px; font-size: 16px; color: #fff; font-weight: 300; white-space: nowrap; text-align: center; justify-content: space-between; }
+.footer-link { font-family: Inria Sans, sans-serif; }
+.footer-copyright { color: #a2a2a2; text-align: center; flex-grow: 1; flex-basis: auto; font: 300 14px Inria Sans, sans-serif; }
+.footer-social { align-self: stretch; display: flex; align-items: start; gap: 20px; justify-content: space-between; }
+.social-icon { aspect-ratio: 1; object-fit: auto; object-position: center; width: 24px; }
+
+@media (max-width: 991px) {
+  .vr-container { max-width: 100%; padding-left: 20px; }
+  .vr-content { max-width: 100%; }
+  .vr-row { flex-direction: column; align-items: stretch; gap: 0; }
+  .vr-column { width: 100%; }
+  .vr-hero { max-width: 100%; }
+  .vr-nav { max-width: 100%; flex-wrap: wrap; white-space: initial; }
+  .hero-content { margin-top: 40px; }
+  .hero-title { max-width: 100%; font-size: 40px; }
+  .hero-subtitle { max-width: 100%; font-size: 40px; }
+  .hero-description { max-width: 100%; }
+  .cta-button { margin-top: 40px; }
+  .vr-image-column { width: 100%; }
+  .vr-image { max-width: 100%; }
+  .product-section { max-width: 100%; margin-top: 40px; }
+  .product-row { flex-direction: column; align-items: stretch; gap: 0; }
+  .product-column { width: 100%; }
+  .product-card { margin-top: 40px; }
+  .product-title { margin-top: 40px; }
+  .feature-section { max-width: 100%; margin-top: 40px; }
+  .feature-row { flex-direction: column; align-items: stretch; gap: 0; }
+  .feature-column { width: 100%; }
+  .feature-content { max-width: 100%; margin-top: 40px; }
+  .feature-images { flex-direction: column; align-items: stretch; gap: 0; }
+  .feature-image-large { margin-top: 40px; }
+  .feature-image-small { margin-top: 23px; }
+  .feature-text { max-width: 100%; margin-top: 40px; }
+  .feature-title { max-width: 100%; font-size: 40px; line-height: 43px; }
+  .feature-description { max-width: 100%; margin-top: 40px; }
+  .feature-cta { margin-top: 40px; }
+  .touch-reality-section { max-width: 100%; margin-top: 40px; }
+  .touch-reality-row { flex-direction: column; align-items: stretch; gap: 0; }
+  .touch-reality-column { width: 100%; }
+  .touch-reality-content { max-width: 100%; margin-top: 40px; }
+  .touch-reality-title { max-width: 100%; font-size: 40px; }
+  .touch-reality-text { max-width: 100%; }
+  .touch-reality-description { max-width: 100%; margin-top: 40px; }
+  .touch-reality-cta { margin-top: 40px; }
+  .touch-reality-image-column { width: 100%; }
+  .touch-reality-image { max-width: 100%; margin-top: 40px; }
+  .newsletter-section { max-width: 100%; margin-top: 40px; padding: 0 20px; }
+  .newsletter-title { max-width: 100%; margin-right: 10px; }
+  .newsletter-description { max-width: 100%; }
+  .newsletter-form { padding-left: 20px; white-space: initial; }
+  .newsletter-submit { white-space: initial; padding: 0 20px; }
+  .footer-nav { flex-wrap: wrap; margin-top: 40px; }
+  .app-download-title { margin-top: 40px; }
+  .app-download-buttons { flex-wrap: wrap; margin-top: 40px; }
+  .footer-section { max-width: 100%; margin-top: 40px; padding: 0 20px; }
+  .footer-divider { max-width: 100%; }
+  .footer-content { max-width: 100%; flex-wrap: wrap; padding-right: 20px; }
+  .footer-links { white-space: initial; }
+}
+
+  </style>
+
+
+<section class="vr-section">
+  <div class="vr-container">
+    <div class="vr-content">
+      <div class="vr-row">
+        <div class="vr-column">
+          <div class="vr-hero">
+            <nav class="vr-nav">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/46009f96984ded005f366da1265fc725d4f2388ee9bbf1f2c9d28429e7061c2d?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="vr-logo" alt="VR Zone Logo" />
+              <a href="#" class="nav-item">HOME</a>
+              <a href="#" class="nav-item">PRODUCTS</a>
+              
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7fa458294701cc38d62a882f6d0dfe7a0fd9d3cb64d9ad95e2f548942c155295?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="vr-divider" alt="" />
+              <a href="#" class="nav-item">SERVICES</a>
+              <a href="#" class="nav-item">CONTACTS</a>
+            </nav>
+            <div class="hero-content">
+              <h1 class="hero-title">NEXT GEN</h1>
+              <h2 class="hero-subtitle">VIRTUAL REALITY</h2>
+              <p class="hero-description">
+                The Future of Virtual Reality is increasingly multisensory,
+                allowing users to experience the metaverse with all their
+                senses. The more realistic the virtual world, the more
+                immersive the experiences.
+              </p>
+              <a href="#" class="cta-button">Sign in</a>
+            </div>
+          </div>
+        </div>
+        <div class="vr-image-column">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d860b6777d04880021644a752610f916063c48f2c174f7e35c926e28b4364016?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="vr-image" alt="VR Headset" />
+        </div>
+      </div>
+    </div>
+    
+    <section class="product-section">
+      <div class="product-row">
+        <div class="product-column">
+          <div class="product-card">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/66c8fd3ca90db789265399fe9175fb3ba35d40250ca1425b3e97e43e74f8d90e?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="product-image" alt="Gear VR headset" />
+            <h3 class="product-title">Gear VR headset</h3>
+          </div>
+        </div>
+        <div class="product-column">
+          <div class="product-card">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2b45a21f3ab1c7d14b0b3536b47effd687b4975ac2aa667418311054d3e292ba?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="product-image" alt="Smart VR Headset" />
+            <h3 class="product-title">Smart VR Headset</h3>
+          </div>
+        </div>
+        <div class="product-column">
+          <div class="product-card">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f734507b44ac3730b88f5fa88755fd6740d389ab2a36ed32275f88fefcd55b2?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="product-image" alt="Play station VR" />
+            <h3 class="product-title">Play station VR</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="feature-section">
+      <div class="feature-row">
+        <div class="feature-column">
+          <div class="feature-content">
+            <div class="feature-images">
+              <div class="feature-column">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/92b548b62533c53c4af19082d35c1765b7ee5abba4e040242623e701b75ac832?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="feature-image-large" alt="VR Experience" />
+              </div>
+              <div class="feature-column">
+                <div class="feature-image-small">
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e8b0d397861cb970ddcaab5093a5abd3faafd29118b3337c6bc27768df927a05?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="feature-image" alt="VR Controller" />
+                  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c61a632fb58b88c40a80a3e288defb7eaacff6a8a82c0dbb040ad5fb950fc177?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="feature-image" alt="VR Headset" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-column">
+          <div class="feature-text">
+            <h2 class="feature-title">Exploring the metaverse one pixel at a time</h2>
+            <p class="feature-description">
+              The Future of Virtual Reality is increasingly multisensory,
+              allowing users to experience the metaverse with all their
+              senses. The more realistic the virtual world, the more
+              immersive the experiences.
+            </p>
+            <div class="feature-cta">
+              <a href="#" class="cta-text">Play now</a>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/888bda328dbcd1e143b36b5edb95b6ec6183dd3e2be1025e7c031cda38db0a6f?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="cta-icon" alt="Play icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="touch-reality-section">
+      <div class="touch-reality-row">
+        <div class="touch-reality-column">
+          <div class="touch-reality-content">
+            <h2 class="touch-reality-title">Touch the <span>Reality</span></h2>
+            <div class="touch-reality-text">
+              <p class="touch-reality-description">
+                The Future of Virtual Reality is increasingly multisensory,
+                allowing users to experience the metaverse with all their
+                senses. The more realistic the virtual world, the more
+                immersive the experiences.
+              </p>
+              <a href="#" class="touch-reality-cta">Play now</a>
+            </div>
+          </div>
+        </div>
+        <div class="touch-reality-image-column">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a52bb3f38c1be0bd911487c3b4d6f87a864929729576ac5f79f18673b2faa261?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="touch-reality-image" alt="VR Experience" />
+        </div>
+      </div>
+    </section>
+    
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">Subscribe to our Newsletter</h2>
+        <p class="newsletter-description">
+          Lorem ipsum dolor sit amet consectetur. Sit sagittis scelerisque
+          quisque amet ut diam. Imperdiet quis
+        </p>
+        <form class="newsletter-form">
+          <label for="email" class="visually-hidden">Enter your email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" aria-label="Enter your email" required>
+          <button type="submit" class="newsletter-submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+    
+    <nav class="footer-nav">
+      <a href="#" class="footer-nav-item">Help</a>
+      <a href="#" class="footer-nav-item-grow">About us</a>
+      <a href="#" class="footer-nav-item-grow">Company</a>
+      <a href="#" class="footer-nav-item">Services</a>
+      <a href="#" class="footer-nav-item">Contact</a>
+    </nav>
+    
+    <section class="app-download">
+      <h2 class="app-download-title">Download our App</h2>
+      <p class="app-download-description">
+        Lorem ipsum dolor sit amet consectetur. Sit sagittis scelerisque
+        quisque amet ut diam. Imperdiet quis
+      </p>
+      <div class="app-download-buttons">
+        <a href="#"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b525da0cdc340cdd2b44f400195295ad83f713fa5e487d351813a6c5aeffff0?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="app-store-button" alt="Download on App Store" /></a>
+        <a href="#"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb307610feed93a254eb8d2e3feae6831370f4490e5f60639c9a392c1c4ccd9b?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="play-store-button" alt="Get it on Google Play" /></a>
+      </div>
+    </section>
+    
+    <footer class="footer-section">
+      <hr class="footer-divider">
+      <div class="footer-content">
+        <nav class="footer-links">
+          <a href="#" class="footer-link">Terms</a>
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Conditions</a>
+        </nav>
+        <p class="footer-copyright">© 2024 VR ZONE Ltd. All Rights Reserved</p>
+        <div class="footer-social">
+          <a href="#"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba14a3c95ec71a8b5ded1d1d8e3698143199e4d19d7248dd3426371b342785e4?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="social-icon" alt="Facebook" /></a>
+          <a href="#"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/221367730b7144159225d892bb7699e5c46dd5eacb6e246dd139a7dc0c33a084?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="social-icon" alt="Twitter" /></a>
+          <a href="#"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/87ee7506934cd65c2765caa4d4c5a64ee367d2dfed65a55a87a0d69d569d9530?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="social-icon" alt="Instagram" /></a>
+          <a href="#"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3e4c1f0ccb3b9a5d13a18a37cfba335a970ddd6c019a76d8655f5e83f6dcfe14?apiKey=b3ff86a9a7b14a4e93819f0f83121e9a&" class="social-icon" alt="LinkedIn" /></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</section>
+
+</body>
+</html>
+
